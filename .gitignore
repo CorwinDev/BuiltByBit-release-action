@@ -1,4 +1,6 @@
-/.github
-/act.exe
-/node_modules
-/test.zip
+node_modules
+
+# TypeScript build output (intermediate files)
+dist/*.d.ts
+dist/*.map
+# Note: dist/index.js must be committed for GitHub Actions to work

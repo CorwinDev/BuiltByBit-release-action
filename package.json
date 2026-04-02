@@ -1,9 +1,18 @@
 {
   "name": "builtbybit-release-action",
   "version": "1.0.0",
-  "main": "index.js",
-  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc && ncc build dist/index.js -o dist --minify",
+    "package": "npm run build",
+    "typecheck": "tsc --noEmit"
+  },
   "dependencies": {
-    "@actions/core": "^3.0.0"
+    "@actions/core": "^1.11.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.15",
+    "@vercel/ncc": "^0.38.3",
+    "typescript": "^5.8.3"
   }
 }

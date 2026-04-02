@@ -55,6 +55,7 @@ jobs:
         run: |
           mkdir -p ./release
           gh release download "${{ github.event.release.tag_name }}" \
+            --repo "${{ github.repository }}" \
             --pattern "*.zip" \
             --dir ./release
 
@@ -106,7 +107,7 @@ jobs:
         with:
           api_token: ${{ secrets.BBB_API_TOKEN }}
           resource_id: 12345
-          version: ${GITHUB_REF#refs/tags/v}
+          version: ${{ github.ref_name }}
           file: "./release.zip"
           post_update: true
           title: "New Release"
@@ -115,7 +116,7 @@ jobs:
 
 ---
 
-## 🧪 Minimal Example
+## Minimal Example
 
 ```yaml
 - uses: corwindev/builtbybit-release-action@v1
@@ -128,7 +129,7 @@ jobs:
 
 ---
 
-## 🔐 Setup
+## Setup
 
 1. Get your BuiltByBit API token (https://builtbybit.com/resources/dashboard/api)
 2. Add it to GitHub Secrets
