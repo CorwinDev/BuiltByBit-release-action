@@ -56,7 +56,7 @@ jobs:
           mkdir -p ./release
           gh release download "${{ github.event.release.tag_name }}" \
             --repo "${{ github.repository }}" \
-            --pattern "*.zip" \
+            --archive zip \
             --dir ./release
 
       - name: Get file path
