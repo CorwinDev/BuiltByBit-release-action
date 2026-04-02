@@ -1,4 +1,4 @@
-name: "BuiltByBit Release Publisher"
+name: "BuiltByBit Release Action"
 description: "Publish a BuiltByBit release with a specified version and file asset."
 
 inputs:
